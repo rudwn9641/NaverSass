@@ -1,10 +1,42 @@
 @use "sass:math";
 $rootUnit: 16px !default;
+$breakpoint: 768px;
 
+//단위를 제거하는 함수
 @function removeUnit($value){
   @return math.div($value, ($value * 0 + 1));
 }
 
+//px을 rem단위로 변경해주는 함수
 @function rem($value, $base: $rootUnit){
   @return removeUnit(math.div($value, $base)) * 1rem;
+}
+
+//flex박스 믹스인
+@mixin flexbox($dir: row, $wrap: nowrap, $jc: center, $align: stretch){
+  display: flex;
+  flex-direction: $dir;
+  flex-wrap: $wrap;
+  justify-content: $jc;
+  align-items: $align;
+}
+
+@mixin flexboxCenter($dir: row, $wrap: nowrap, $jc: center, $align: center){
+  display: flex;
+  flex-direction: $dir;
+  flex-wrap: $wrap;
+  justify-content: $jc;
+  align-items: $align;
+}
+
+//미디어쿼리 믹스인
+@mixin mobile{
+  @media (max-width: #{$breakpoint - 1}){
+    @content;
+  }
+}
+@mixin desktop{
+  @media (min-width: $breakpoint){
+    @content;
+  }
 }

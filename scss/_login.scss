@@ -1,0 +1,13 @@
+.container{
+  background: yellow;
+
+  @include mobile{
+    background: pink;
+  }
+
+  @include desktop{
+    background: skyblue;
+    @include flexboxCenter(column);
+    min-height: 100vh;
+  }
+}
