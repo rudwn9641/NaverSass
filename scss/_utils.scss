@@ -70,3 +70,34 @@ $breakpoint: 768px;
   margin-top: $marginY;
   margin-bottom: $marginY;
 }
+
+// 접근성 관련 속성
+@mixin ally {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  visibility: hidden;
+  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
+}
+
+@mixin customOutline{
+  box-shadow: 0 0 0 2px $outline;
+  border-radius: 2px;
+}
+
+// 박스 크기 조정 및 가운데 배치를 위한 믹스인
+
+@mixin boxFixed($width: 460px){
+  width: $width;
+  @include autoMargin;
+}
+
+@mixin boxFull($width: 100vw) {
+  width: $width;
+  position: relative;
+  left: 50%;
+  margin-left: math.div(-$width / 2);
+}

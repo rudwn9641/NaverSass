@@ -6,8 +6,8 @@ body *, body *::before, body *::after{
   box-sizing: border-box;
 }
 // 숨김 콘텐츠
-.a11yHidden{
-  // @include a11y;
+.a11yHidden, legend{
+  @include a11y;
 }
 
 // 반응형 이미지
