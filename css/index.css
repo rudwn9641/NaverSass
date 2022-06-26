@@ -376,13 +376,44 @@ body {
 
 @media (max-width: 767px) {
   .container {
-    background: yellowgreen;
+    padding-top: 25px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 @media (min-width: 768px) {
   .container {
-    background: pink;
+    padding-top: 50px;
   }
+}
+
+.logo {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+@media (max-width: 767px) {
+  .logo {
+    width: 51.25%;
+    min-width: 164px;
+    max-width: 230px;
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+}
+@media (min-width: 768px) {
+  .logo {
+    width: 230px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}
+.logo__link {
+  display: block;
+}
+.logo__link:focus {
+  outline-offset: 10px;
 }
 
 /*# sourceMappingURL=index.css.map */
