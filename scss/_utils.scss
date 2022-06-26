@@ -31,10 +31,11 @@ $breakpoint: 768px;
 
 //미디어쿼리 믹스인
 @mixin mobile{
-  @media (max-width: #{$breakpoint - 1}){
+  @media (max-width: ($breakpoint - 1)){
     @content;
   }
 }
+
 @mixin desktop{
   @media (min-width: $breakpoint){
     @content;

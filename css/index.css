@@ -374,23 +374,14 @@ body {
   color: #333;
 }
 
-.container {
-  background: yellow;
-}
 @media (max-width: 767px) {
   .container {
-    background: pink;
+    background: yellowgreen;
   }
 }
 @media (min-width: 768px) {
   .container {
-    background: skyblue;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    background: pink;
   }
 }
 

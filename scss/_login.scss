@@ -1,13 +1,9 @@
 .container{
-  background: yellow;
-
   @include mobile{
-    background: pink;
+    background: yellowgreen;
   }
 
   @include desktop{
-    background: skyblue;
-    @include flexboxCenter(column);
-    min-height: 100vh;
+    background: pink;
   }
 }
