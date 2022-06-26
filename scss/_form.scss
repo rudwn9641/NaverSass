@@ -26,6 +26,36 @@
   color: $warning;
 }
 
+//커스텀 체크박스
+.customCheckbox{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+
+  &focus + &Label::before{
+    border: 2px solid red;
+    border-radius: 2px;
+  }
+
+  &Label{
+    @include flexbox($align: center);
+
+    &::before{
+      content: "";
+      width: 24px;
+      height: 24px;
+      margin-right: 4px;
+      background: url(./../images/unchecked.svg) no-repeat 0 0;
+    }
+  }
+
+  &
+  :checked + &Laber::before{
+    background-image: url(./../images/checked.svg);
+  }
+}
+
 .is--invalid .errorMessage{
   display: block;
 }

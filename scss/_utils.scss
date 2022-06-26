@@ -13,7 +13,7 @@ $breakpoint: 768px;
 }
 
 //flex박스 믹스인
-@mixin flexbox($dir: row, $wrap: nowrap, $jc: center, $align: stretch){
+@mixin flexbox($dir: row, $wrap: nowrap, $jc: flex-start, $align: stretch){
   display: flex;
   flex-direction: $dir;
   flex-wrap: $wrap;
@@ -72,7 +72,7 @@ $breakpoint: 768px;
 }
 
 // 접근성 관련 속성
-@mixin ally {
+@mixin a11y{
   position: absolute;
   width: 1px;
   height: 1px;
