@@ -1,0 +1,35 @@
+@use 'sass:map';
+
+//Breakpoints
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+@function errorMessage($breakpoint-name){
+  @return '#{$breakpoint-name} : 중단점이 유효하지 않습니다.';
+}
+
+@mixin respond-from($breakpoint) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map.get($breakpoint, $breakpoint);
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  } @else {
+    @error errorMessage($breakpoint);
+  }
+}
+
+@mixin respond-until($breakpoints) {
+  @if map.has-key($breakpoint, $breakpoint) {
+    $breakpoint-value: map.get($breakpoint, $breakpoint);
+
+    @media (max-width: ($breakpoints-value - 1)) {
+      
+    }
+  }
+}
