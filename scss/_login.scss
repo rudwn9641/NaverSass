@@ -71,6 +71,7 @@
 }
 
 .ipSecurityLink{
+  margin-right: 8px;
   @include mobile{
     display: none;
   }
@@ -80,25 +81,56 @@
   @include mobile{
     display: none;
   }
-  
+  // 스위치 컴포넌트
   &__checkbox{
     -webkit-appearance: none;
     appearance: none;
+    position: absolute;
   }
 
-  &__label::before{
-    display: inline-block;
-    width: 3em;
-    text-align: right;
-    content: "OFF";
-    color: $secondary;
-    font-weight: 600;
+  &__label{
+    position: relative;
+    width: 44px;
+    height: 24px;
+    background: $silver;
+    display: block;
+    border-radius: 12px;
+    padding: 0 4px;
+    &::before{
+    content: "";
+    position: absolute;
+    top:50%;
+    width: 18px;
+    height: 18px;
+    background: $white;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: all 200ms;
+    }
+  }
+
+  &__checkbox:checked + &__label{
+    background: $primary;
   }
 
   &__checkbox:checked + &__label::before{
-    content: "ON";
-    color: $primary;
+    transform: translate(100%, -50%);
   }
+  
+  // ON/OF 텍스트 스위치 버전
+  // &__label::before{
+  //   display: inline-block;
+  //   width: 3em;
+  //   text-align: right;
+  //   content: "OFF";
+  //   color: $secondary;
+  //   font-weight: 600;
+  // }
+
+  // &__checkbox:checked + &__label::before{
+  //   content: "ON";
+  //   color: $primary;
+  // }
   
 }
 
