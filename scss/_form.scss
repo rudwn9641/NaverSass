@@ -1,3 +1,12 @@
+*:focus{
+  outline: 0;
+}
+
+*:focus-visible{
+  box-shadow: 0 0 2px 2px darkblue;
+  border-radius: 4px;
+}
+
 .formControl{
   position: relative;
 
