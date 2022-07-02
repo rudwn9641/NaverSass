@@ -1,4 +1,6 @@
 .formControl{
+  position: relative;
+
   &__input{
     width: 100%;
     height: 48px;
@@ -28,33 +30,24 @@
 
 //커스텀 체크박스
 .customCheckbox{
+  appearance: none;
   position: absolute;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-
-  &focus + &Label::before{
-    border: 2px solid red;
-    border-radius: 2px;
-  }
+  top:-1px;
+  width: 24px;
+  height: 24px;
 
   &Label{
     @include flexbox($align: center);
+    padding-left: 28px;
+    min-height: 28px;
+    background: url(./../images/unchecked.svg) no-repeat 0 0 / 24px 24px;
+   }
 
-    &::before{
-      content: "";
-      width: 24px;
-      height: 24px;
-      margin-right: 4px;
-      background: url(./../images/unchecked.svg) no-repeat 0 0;
-    }
-  }
 
-  &
-  :checked + &Laber::before{
+   &:checked + &Label{
     background-image: url(./../images/checked.svg);
+   }
   }
-}
 
 .is--invalid .errorMessage{
   display: block;
