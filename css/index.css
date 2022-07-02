@@ -377,6 +377,11 @@ img {
   height: auto;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 body {
   font-family: "Spoqa Han Sans", sans-serif;
   font-weight: 400;
@@ -392,7 +397,7 @@ body {
   width: 100%;
   height: 48px;
   border: 1px solid #dadada;
-  padding: 14px 0 0 0;
+  padding: 14px;
 }
 .formControl__button {
   width: 100%;
@@ -414,7 +419,7 @@ body {
 .customCheckbox {
   appearance: none;
   position: absolute;
-  top: -1px;
+  top: 2px;
   width: 24px;
   height: 24px;
 }
@@ -426,7 +431,7 @@ body {
   align-items: center;
   padding-left: 28px;
   min-height: 28px;
-  background: url(./../images/unchecked.svg) no-repeat 0 0/24px 24px;
+  background: url(./../images/unchecked.svg) no-repeat 0 50%/24px 24px;
 }
 .customCheckbox:checked + .customCheckboxLabel {
   background-image: url(./../images/checked.svg);
@@ -503,6 +508,50 @@ body {
 .userSelectInfo {
   order: 1;
   margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+@media (max-width: 767px) {
+  .userSelectInfo {
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: 768px) {
+  .loginState {
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .ipSecurityLink {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .ipSecurity {
+    display: none;
+  }
+}
+.ipSecurity__checkbox {
+  -webkit-appearance: none;
+  appearance: none;
+}
+.ipSecurity__label::before {
+  display: inline-block;
+  width: 3em;
+  text-align: right;
+  content: "OFF";
+  color: #999;
+  font-weight: 600;
+}
+.ipSecurity__checkbox:checked + .ipSecurity__label::before {
+  content: "ON";
+  color: #03cf5d;
 }
 
 .loginButton {

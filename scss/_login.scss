@@ -57,6 +57,49 @@
 .userSelectInfo{
   order: 1;
   margin-top: 10px;
+  @include flexbox($align: center);
+
+  @include mobile{
+    justify-content: flex-end;
+  }
+}
+
+.loginState{
+  @include desktop{
+    margin-right: auto;
+  }
+}
+
+.ipSecurityLink{
+  @include mobile{
+    display: none;
+  }
+}
+
+.ipSecurity{
+  @include mobile{
+    display: none;
+  }
+  
+  &__checkbox{
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  &__label::before{
+    display: inline-block;
+    width: 3em;
+    text-align: right;
+    content: "OFF";
+    color: $secondary;
+    font-weight: 600;
+  }
+
+  &__checkbox:checked + &__label::before{
+    content: "ON";
+    color: $primary;
+  }
+  
 }
 
 .loginButton{
